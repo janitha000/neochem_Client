@@ -1,0 +1,45 @@
+<html><head>
+  <SCRIPT src="./web-files/dtjava.js"></SCRIPT>
+<script>
+    function launchApplication(jnlpfile) {
+        dtjava.launch(            {
+                url : 'neoChem_Client.jnlp',
+                jnlp_content : 'PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjxqbmxwIHNwZWM9IjEuMCIgeG1sbnM6amZ4PSJodHRwOi8vamF2YWZ4LmNvbSIgaHJlZj0ibmVvQ2hlbV9DbGllbnQuam5scCI+DQogIDxpbmZvcm1hdGlvbj4NCiAgICA8dGl0bGU+bmVvQ2hlbV9DbGllbnQ8L3RpdGxlPg0KICAgIDx2ZW5kb3I+SmFuaXRoYVQ8L3ZlbmRvcj4NCiAgICA8ZGVzY3JpcHRpb24+bnVsbDwvZGVzY3JpcHRpb24+DQogICAgPG9mZmxpbmUtYWxsb3dlZC8+DQogIDwvaW5mb3JtYXRpb24+DQogIDxyZXNvdXJjZXM+DQogICAgPGoyc2UgdmVyc2lvbj0iMS42KyIgaHJlZj0iaHR0cDovL2phdmEuc3VuLmNvbS9wcm9kdWN0cy9hdXRvZGwvajJzZSIvPg0KICAgIDxqYXIgaHJlZj0ibGliXGJhcmJlY3VlLTEuNS1iZXRhMS5qYXIiIHNpemU9IjkxMDc5IiBkb3dubG9hZD0iZWFnZXIiIC8+DQogICAgPGphciBocmVmPSJsaWJcYmFyY29kZS5qYXIiIHNpemU9IjI1NzAxNSIgZG93bmxvYWQ9ImVhZ2VyIiAvPg0KICAgIDxqYXIgaHJlZj0ibGliXGh0dHBjbGllbnQtNC41LjEuamFyIiBzaXplPSI3MzI3NjUiIGRvd25sb2FkPSJlYWdlciIgLz4NCiAgICA8amFyIGhyZWY9ImxpYlxodHRwY2xpZW50LXdpbi00LjUuMS5qYXIiIHNpemU9IjE3MzY5IiBkb3dubG9hZD0iZWFnZXIiIC8+DQogICAgPGphciBocmVmPSJsaWJcaHR0cGNvcmUtNC40LjMuamFyIiBzaXplPSIzMjY1OTQiIGRvd25sb2FkPSJlYWdlciIgLz4NCiAgICA8amFyIGhyZWY9ImxpYlxodHRwbWltZS00LjUuMS5qYXIiIHNpemU9IjQwNjk4IiBkb3dubG9hZD0iZWFnZXIiIC8+DQogICAgPGphciBocmVmPSJsaWJcamF2YXguanNvbi1hcGktMS4wLmphciIgc2l6ZT0iMTk3NTQiIGRvd25sb2FkPSJlYWdlciIgLz4NCiAgICA8amFyIGhyZWY9ImxpYlxqbmEtNC4xLjAuamFyIiBzaXplPSI5MTQ1OTciIGRvd25sb2FkPSJlYWdlciIgLz4NCiAgICA8amFyIGhyZWY9ImxpYlxqc29uX3NpbXBsZS0xLjAuMi5qYXIiIHNpemU9Ijk3MzUiIGRvd25sb2FkPSJlYWdlciIgLz4NCiAgICA8amFyIGhyZWY9ImxpYlxvcmcuanNvbi0yMDEyMDUyMS5qYXIiIHNpemU9IjQwMzc1IiBkb3dubG9hZD0iZWFnZXIiIC8+DQogICAgPGphciBocmVmPSJuZW9DaGVtX0NsaWVudC5qYXIiIHNpemU9IjI3MzAxIiBkb3dubG9hZD0iZWFnZXIiIC8+DQogIDwvcmVzb3VyY2VzPg0KICA8YXBwbGV0LWRlc2MgIHdpZHRoPSI4MDAiIGhlaWdodD0iNjAwIiBtYWluLWNsYXNzPSJjb20uamF2YWZ4Lm1haW4uTm9KYXZhRlhGYWxsYmFjayIgIG5hbWU9Im5lb0NoZW1fQ2xpZW50IiA+DQogICAgPHBhcmFtIG5hbWU9InJlcXVpcmVkRlhWZXJzaW9uIiB2YWx1ZT0iOC4wKyIvPg0KICA8L2FwcGxldC1kZXNjPg0KICA8amZ4OmphdmFmeC1kZXNjICB3aWR0aD0iODAwIiBoZWlnaHQ9IjYwMCIgbWFpbi1jbGFzcz0ibmVvY2hlbV9jbGllbnQuTmVvQ2hlbV9DbGllbnQiICBuYW1lPSJuZW9DaGVtX0NsaWVudCIgLz4NCiAgPHVwZGF0ZSBjaGVjaz0iYWx3YXlzIi8+DQo8L2pubHA+DQo='
+            },
+            {
+                javafx : '8.0+'
+            },
+            {}
+        );
+        return false;
+    }
+</script>
+
+<script>
+    function javafxEmbedneochem_client() {
+        dtjava.embed(
+            {
+                id : 'neochem_client',
+                url : 'neoChem_Client.jnlp',
+                placeholder : 'javafx-app-placeholder',
+                width : '800',
+                height : '600',
+                jnlp_content : 'PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjxqbmxwIHNwZWM9IjEuMCIgeG1sbnM6amZ4PSJodHRwOi8vamF2YWZ4LmNvbSIgaHJlZj0ibmVvQ2hlbV9DbGllbnQuam5scCI+DQogIDxpbmZvcm1hdGlvbj4NCiAgICA8dGl0bGU+bmVvQ2hlbV9DbGllbnQ8L3RpdGxlPg0KICAgIDx2ZW5kb3I+SmFuaXRoYVQ8L3ZlbmRvcj4NCiAgICA8ZGVzY3JpcHRpb24+bnVsbDwvZGVzY3JpcHRpb24+DQogICAgPG9mZmxpbmUtYWxsb3dlZC8+DQogIDwvaW5mb3JtYXRpb24+DQogIDxyZXNvdXJjZXM+DQogICAgPGoyc2UgdmVyc2lvbj0iMS42KyIgaHJlZj0iaHR0cDovL2phdmEuc3VuLmNvbS9wcm9kdWN0cy9hdXRvZGwvajJzZSIvPg0KICAgIDxqYXIgaHJlZj0ibGliXGJhcmJlY3VlLTEuNS1iZXRhMS5qYXIiIHNpemU9IjkxMDc5IiBkb3dubG9hZD0iZWFnZXIiIC8+DQogICAgPGphciBocmVmPSJsaWJcYmFyY29kZS5qYXIiIHNpemU9IjI1NzAxNSIgZG93bmxvYWQ9ImVhZ2VyIiAvPg0KICAgIDxqYXIgaHJlZj0ibGliXGh0dHBjbGllbnQtNC41LjEuamFyIiBzaXplPSI3MzI3NjUiIGRvd25sb2FkPSJlYWdlciIgLz4NCiAgICA8amFyIGhyZWY9ImxpYlxodHRwY2xpZW50LXdpbi00LjUuMS5qYXIiIHNpemU9IjE3MzY5IiBkb3dubG9hZD0iZWFnZXIiIC8+DQogICAgPGphciBocmVmPSJsaWJcaHR0cGNvcmUtNC40LjMuamFyIiBzaXplPSIzMjY1OTQiIGRvd25sb2FkPSJlYWdlciIgLz4NCiAgICA8amFyIGhyZWY9ImxpYlxodHRwbWltZS00LjUuMS5qYXIiIHNpemU9IjQwNjk4IiBkb3dubG9hZD0iZWFnZXIiIC8+DQogICAgPGphciBocmVmPSJsaWJcamF2YXguanNvbi1hcGktMS4wLmphciIgc2l6ZT0iMTk3NTQiIGRvd25sb2FkPSJlYWdlciIgLz4NCiAgICA8amFyIGhyZWY9ImxpYlxqbmEtNC4xLjAuamFyIiBzaXplPSI5MTQ1OTciIGRvd25sb2FkPSJlYWdlciIgLz4NCiAgICA8amFyIGhyZWY9ImxpYlxqc29uX3NpbXBsZS0xLjAuMi5qYXIiIHNpemU9Ijk3MzUiIGRvd25sb2FkPSJlYWdlciIgLz4NCiAgICA8amFyIGhyZWY9ImxpYlxvcmcuanNvbi0yMDEyMDUyMS5qYXIiIHNpemU9IjQwMzc1IiBkb3dubG9hZD0iZWFnZXIiIC8+DQogICAgPGphciBocmVmPSJuZW9DaGVtX0NsaWVudC5qYXIiIHNpemU9IjI3MzAxIiBkb3dubG9hZD0iZWFnZXIiIC8+DQogIDwvcmVzb3VyY2VzPg0KICA8YXBwbGV0LWRlc2MgIHdpZHRoPSI4MDAiIGhlaWdodD0iNjAwIiBtYWluLWNsYXNzPSJjb20uamF2YWZ4Lm1haW4uTm9KYXZhRlhGYWxsYmFjayIgIG5hbWU9Im5lb0NoZW1fQ2xpZW50IiA+DQogICAgPHBhcmFtIG5hbWU9InJlcXVpcmVkRlhWZXJzaW9uIiB2YWx1ZT0iOC4wKyIvPg0KICA8L2FwcGxldC1kZXNjPg0KICA8amZ4OmphdmFmeC1kZXNjICB3aWR0aD0iODAwIiBoZWlnaHQ9IjYwMCIgbWFpbi1jbGFzcz0ibmVvY2hlbV9jbGllbnQuTmVvQ2hlbV9DbGllbnQiICBuYW1lPSJuZW9DaGVtX0NsaWVudCIgLz4NCiAgPHVwZGF0ZSBjaGVjaz0iYWx3YXlzIi8+DQo8L2pubHA+DQo='
+            },
+            {
+                javafx : '8.0+'
+            },
+            {}
+        );
+    }
+    <!-- Embed FX application into web page once page is loaded -->
+    dtjava.addOnloadCallback(javafxEmbedneochem_client);
+</script>
+
+</head><body>
+<h2>Test page for <b>neoChem_Client</b></h2>
+  <b>Webstart:</b> <a href='neoChem_Client.jnlp' onclick="return launchApplication('neoChem_Client.jnlp');">click to launch this app as webstart</a><br><hr><br>
+
+  <!-- Applet will be inserted here -->
+  <div id='javafx-app-placeholder'></div>
+</body></html>
