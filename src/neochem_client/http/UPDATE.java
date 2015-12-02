@@ -24,7 +24,7 @@ public class UPDATE {
         int id = item.getID();
         
         String url = "http://192.168.1.130:8080/neochem/webapi/items/" +id;
-       //  String url = "http://localhost:8080/neochem/webapi/items/"+id;
+       // String url = "http://localhost:8080/neochem/webapi/items/"+id;
         URL obj = new URL(url);
         HttpURLConnection con = (HttpURLConnection) obj.openConnection();
         

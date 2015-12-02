@@ -37,19 +37,20 @@ public class updateDialog {
         GridPane grid = new GridPane();
         grid.setHgap(10);
         grid.setVgap(10);
-        grid.setPadding(new Insets(20, 150, 10, 10));
+        grid.setPadding(new Insets(20, 100, 10, 10));
 
         TextField FormerCode = new TextField();
+        FormerCode.setMinWidth(300);
         FormerCode.setText(item.getFormerCode());
         //FormerCode.setPromptText(item.getFormerCode());
-        TextField NewCode = new TextField();
-        NewCode.setText(item.getNewCode());
+        //TextField NewCode = new TextField();
+        //NewCode.setText(item.getNewCode());
         //NewCode.setPromptText(item.getNewCode());
 
-        grid.add(new Label("Former Code:"), 0, 0);
+        grid.add(new Label("Mane Code:"), 0, 0);
         grid.add(FormerCode, 1, 0);
-        grid.add(new Label("New Code"), 0, 1);
-        grid.add(NewCode, 1, 1);
+        //grid.add(new Label("New Code"), 0, 1);
+        //grid.add(NewCode, 1, 1);
 
 // Enable/Disable login button depending on whether a username was entered.
         Node loginButton = dialog.getDialogPane().lookupButton(loginButtonType);
@@ -69,7 +70,7 @@ public class updateDialog {
         dialog.setResultConverter(dialogButton -> {
             
             if (dialogButton == loginButtonType) {
-                return new Item(item.getID(), FormerCode.getText(), NewCode.getText());
+                return new Item(item.getID(), FormerCode.getText(), item.getNewCode());
             }
             return null;
         });

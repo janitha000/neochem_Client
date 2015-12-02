@@ -5,6 +5,7 @@
  */
 package neochem_client.barcode;
 
+import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.print.PageFormat;
@@ -13,7 +14,9 @@ import static java.awt.print.Printable.NO_SUCH_PAGE;
 import static java.awt.print.Printable.PAGE_EXISTS;
 import java.awt.print.PrinterException;
 import java.awt.print.PrinterJob;
+import java.io.ByteArrayOutputStream;
 import java.io.File;
+import java.io.FileOutputStream;
 import javafx.scene.control.Alert;
 import javax.swing.ImageIcon;
 import neochem_client.dialogs.WarningE;
@@ -33,15 +36,22 @@ public class barcodeGenerator {
 
         
         Barcode barcode = BarcodeFactory.createCode128(code);
-        barcode.setBarHeight(150);
-        barcode.setBarWidth(3);
-        barcode.setAlignmentX(2);
-        //barcode.setAlignmentY(60);
+        barcode.setBarHeight(50);
+        barcode.setBarWidth(1);
+        barcode.setBackground(Color.WHITE);
         System.out.println("GENERATED");
 
         try {
+            ByteArrayOutputStream baos = new ByteArrayOutputStream();
+            BarcodeImageHandler.writePNG(barcode, baos);
             File f = new File("E:\\bar\\mybarcode.png");
-            BarcodeImageHandler.savePNG(barcode, f);
+            f.setReadable(true);
+            FileOutputStream fos = new FileOutputStream(f);
+            BarcodeImageHandler.writePNG(barcode, fos);
+            
+            fos.close();
+            
+            //BarcodeImageHandler.savePNG(barcode, f);
 
             Image img = new ImageIcon("E:\\bar\\mybarcode.png").getImage();
             PrinterJob printJob = PrinterJob.getPrinterJob();
@@ -58,6 +68,8 @@ public class barcodeGenerator {
                 try {
                     printJob.print();
                 } catch (Exception prt) {
+                    Alert alert = WarningE.getWarningExceptionStatic(prt);
+                    alert.showAndWait();
                     System.err.println(prt.getMessage());
                     
                 }
@@ -65,7 +77,8 @@ public class barcodeGenerator {
             // Let the barcode image handler do the hard work
 
         } catch (Exception e) {
-            // Error handling here
+            Alert alert = WarningE.getWarningExceptionStatic(e);
+            alert.showAndWait();
         }
     }
 }
