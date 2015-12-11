@@ -12,6 +12,7 @@ import java.io.OutputStreamWriter;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import javafx.scene.control.Alert;
+import neochem_client.barcode.barcodeLogic;
 import neochem_client.models.Item;
 import org.json.simple.JSONObject;
 
@@ -28,8 +29,8 @@ public class POST {
 
     public void sendPost(Item item) throws Exception {
 
-        String url = "http://192.168.1.130:8080/neochem/webapi/items";
-        //String url = "http://localhost:8080/neochem/webapi/items";
+        String url = "http://192.168.1.4:8080/neochem/webapi/items";
+       // String url = "http://localhost:8080/neochem/webapi/items";
         URL obj = new URL(url);
         HttpURLConnection con = (HttpURLConnection) obj.openConnection();  //https????
 
@@ -39,18 +40,20 @@ public class POST {
         con.setRequestProperty("Content-Type", "application/json; charset=UTF-8");
         con.setRequestProperty("Accept", "application/json");
 
-        String charValue = item.getNewCode();
-        if (charValue.equals("R")) {
-            code = get.getCode("R") + 1;
-        }
-        if (charValue.equals("L")) {
-            code = get.getCode("L") + 1;
-        }
+        barcodeLogic logic = new barcodeLogic();
+        String newcode = logic.generateBarCode(item);
 
-        newCode = charValue + Integer.toString(code);
+        
         JSONObject cred = new JSONObject();
-        cred.put("formerCode", item.getFormerCode());
-        cred.put("newCode", newCode);
+        cred.put("maneCode", item.getManeCode());
+        cred.put("maneName", item.getManeName());
+        cred.put("type", item.getType());
+        cred.put("flavorFormat", item.getFlavorFormat());
+        cred.put("flavorType", item.getFlavorType());
+        cred.put("year", item.getYear());
+        cred.put("country", item.getCountry());
+        cred.put("neoChemName", item.getNeoChemName());
+        cred.put("neoChemCode", newcode);
 
         // Send post request
         con.setDoOutput(true);
@@ -58,10 +61,10 @@ public class POST {
 //        wr.writeBytes(urlParameters);
 //        wr.flush();
 //        wr.close();
-
-        OutputStreamWriter wr = new OutputStreamWriter(con.getOutputStream());
-        wr.write(cred.toString());
-        wr.flush();
+        try (OutputStreamWriter wr = new OutputStreamWriter(con.getOutputStream())) {
+            wr.write(cred.toString());
+            wr.flush();
+        }
 
         int responseCode = con.getResponseCode();
         System.out.println("\nSending 'POST' request to URL : " + url);

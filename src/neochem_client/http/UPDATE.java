@@ -21,9 +21,9 @@ public class UPDATE {
     private final String USER_AGENT = "Mozilla/5.0";
 
     public void sendUpdate(Item item) throws Exception {
-        int id = item.getID();
+        int id = (int) item.getId();
         
-        String url = "http://192.168.1.130:8080/neochem/webapi/items/" +id;
+        String url = "http://192.168.1.4:8080/neochem/webapi/items/" +id;
        // String url = "http://localhost:8080/neochem/webapi/items/"+id;
         URL obj = new URL(url);
         HttpURLConnection con = (HttpURLConnection) obj.openConnection();
@@ -41,9 +41,9 @@ public class UPDATE {
 
         
         JSONObject cred = new JSONObject();
-        cred.put("formerCode",item.getFormerCode());
-        cred.put("newCode", item.getNewCode());
-        cred.put("id", item.getID());
+        cred.put("formerCode",item.getManeCode());
+        cred.put("newCode", item.getNeoChemCode());
+        cred.put("id", item.getId());
         
        
         

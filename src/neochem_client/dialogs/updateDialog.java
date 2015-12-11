@@ -41,7 +41,7 @@ public class updateDialog {
 
         TextField FormerCode = new TextField();
         FormerCode.setMinWidth(300);
-        FormerCode.setText(item.getFormerCode());
+        FormerCode.setText(item.getManeCode());
         //FormerCode.setPromptText(item.getFormerCode());
         //TextField NewCode = new TextField();
         //NewCode.setText(item.getNewCode());
@@ -70,7 +70,8 @@ public class updateDialog {
         dialog.setResultConverter(dialogButton -> {
             
             if (dialogButton == loginButtonType) {
-                return new Item(item.getID(), FormerCode.getText(), item.getNewCode());
+                //return new Item(item.getId(), FormerCode.getText(), item.getNeoChemCode());
+                return null;
             }
             return null;
         });

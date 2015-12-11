@@ -56,9 +56,9 @@ public class Table {
                 // Compare first name and last name of every person with filter text.
                 String lowerCaseFilter = newValue.toLowerCase();
 
-                if (item.getFormerCode().toLowerCase().contains(lowerCaseFilter)) {
+                if (item.getManeCode().toLowerCase().contains(lowerCaseFilter)) {
                     return true; // Filter matches first name.
-                } else if (item.getNewCode().toLowerCase().contains(lowerCaseFilter)) {
+                } else if (item.getNeoChemCode().toLowerCase().contains(lowerCaseFilter)) {
                     return true; // Filter matches last name.
                 }
                 return false; // Does not match.

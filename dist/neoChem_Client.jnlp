@@ -18,7 +18,7 @@
     <jar href="lib\jna-4.1.0.jar" size="914597" download="eager" />
     <jar href="lib\json_simple-1.0.2.jar" size="9735" download="eager" />
     <jar href="lib\org.json-20120521.jar" size="40375" download="eager" />
-    <jar href="neoChem_Client.jar" size="34526" download="eager" />
+    <jar href="neoChem_Client.jar" size="41891" download="eager" />
   </resources>
   <applet-desc  width="800" height="600" main-class="com.javafx.main.NoJavaFXFallback"  name="neoChem_Client" >
     <param name="requiredFXVersion" value="8.0+"/>

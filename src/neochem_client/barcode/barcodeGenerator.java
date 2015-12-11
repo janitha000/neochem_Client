@@ -44,7 +44,7 @@ public class barcodeGenerator {
         try {
             ByteArrayOutputStream baos = new ByteArrayOutputStream();
             BarcodeImageHandler.writePNG(barcode, baos);
-            File f = new File("E:\\bar\\mybarcode.png");
+            File f = new File("mybarcode.png");
             f.setReadable(true);
             FileOutputStream fos = new FileOutputStream(f);
             BarcodeImageHandler.writePNG(barcode, fos);
@@ -53,7 +53,7 @@ public class barcodeGenerator {
             
             //BarcodeImageHandler.savePNG(barcode, f);
 
-            Image img = new ImageIcon("E:\\bar\\mybarcode.png").getImage();
+            Image img = new ImageIcon(".\\mybarcode.png").getImage();
             PrinterJob printJob = PrinterJob.getPrinterJob();
             printJob.setPrintable(new Printable() {
                 public int print(Graphics graphics, PageFormat pageFormat, int pageIndex) throws PrinterException {
@@ -75,10 +75,12 @@ public class barcodeGenerator {
                 }
             }
             // Let the barcode image handler do the hard work
-
+         img.flush();
         } catch (Exception e) {
             Alert alert = WarningE.getWarningExceptionStatic(e);
             alert.showAndWait();
         }
+        
+        
     }
 }
